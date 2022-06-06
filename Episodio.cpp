@@ -1,7 +1,8 @@
 #include "Episodio.h"
 
-Episodio::Episodio(){
-
+Episodio::Episodio():Video(){
+    temporada = 1;
+    capitulo = 12;
 }
 Episodio::Episodio(int temporada_, int capitulo_, std::string nombre_, std::string genero_, int duracion_):Video(nombre_, genero_, duracion_){
     setTemporada(temporada_);
