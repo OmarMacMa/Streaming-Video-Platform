@@ -8,10 +8,10 @@ class Video{
         Video();
         Video(std::string, std::string, int);
         ~Video();
-        std::string getNombre();
-        std::string getGenero();
-        int getDuracion();
-        int getId();
+        std::string getNombre()const;
+        std::string getGenero()const;
+        int getDuracion()const;
+        int getId()const;
         void setNombre(std::string);
         void setGenero(std::string);
         void setDuracion(int);
