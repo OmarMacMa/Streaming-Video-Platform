@@ -6,12 +6,12 @@
 class Episodio:public Video{
     public:
         Episodio();
-        Episodio(std::string, int, int);
+        Episodio(int, int, std::string, std::string, int);
         ~Episodio();
-        int getTemporada();
-        int getCapitulo();
-        void setTemporada();
-        void setCapitulo();
+        int getTemporada()const;
+        int getCapitulo()const;
+        void setTemporada(int);
+        void setCapitulo(int);
         void imprime() override;
     private:
         int temporada;

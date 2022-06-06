@@ -11,6 +11,8 @@ Video::Video(std::string nombre_, std::string genero_, int duracion_){
     setGenero(genero_);
     setDuracion(duracion_);
 }
+Video::~Video(){
+}
 std::string Video::getNombre()const{
     return nombre;
 }
