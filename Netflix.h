@@ -12,6 +12,8 @@ public:
   Netflix();
   Netflix(std::vector<Video *>);
   ~Netflix();
+  std::vector<Video *> getCatalogo();
+  void setCatalogo(std::vector<Video *>);
   void agregarArchivo(std::string);
   void buscarCal(int);
   void buscarNom(std::string);
