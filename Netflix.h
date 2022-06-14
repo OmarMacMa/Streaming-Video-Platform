@@ -15,9 +15,13 @@ public:
   std::vector<Video *> getCatalogo();
   void setCatalogo(std::vector<Video *>);
   void agregarArchivo(std::string);
-  void buscarCal(int);
+  void buscarCalPel(int);
+  void buscarSerie(std::string, int);
   void buscarNom(std::string);
   void buscarGen(std::string);
+  void calificar(std::string, int);
+  void mostrar();
+  friend std::ostream &operator<<(std::ostream &salida, const Netflix&);
 
 private:
   std::vector<Video *> catalogo;

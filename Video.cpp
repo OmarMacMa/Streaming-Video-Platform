@@ -18,12 +18,15 @@ std::string Video::getNombre() const { return nombre; }
 std::string Video::getGenero() const { return genero; }
 int Video::getDuracion() const { return duracion; }
 int Video::getId() const { return id; }
+int Video::getCalificacion() const { return calificacion; }
 void Video::setNombre(std::string nombre_) { nombre = nombre_; }
 void Video::setGenero(std::string genero_) { genero = genero_; }
 void Video::setDuracion(int duracion_) { duracion = duracion_; }
 void Video::setId(int id_) { id = id_; }
+void Video::setCalificacion(int calificacion_) { calificacion = calificacion_; }
 void Video::imprime() {
-  std::cout << "Titulo: " << nombre << std::endl;
+  std::cout << "Titulo: " << this->nombre << std::endl;
   std::cout << "Duracion: " << duracion << std::endl;
   std::cout << "Genero: " << genero << std::endl;
+  std::cout << "Calificacion: " << calificacion << std::endl;
 }

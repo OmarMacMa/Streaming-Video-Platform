@@ -1,4 +1,5 @@
 #include "Netflix.h"
+#include <iostream>
 
 Netflix::Netflix() {}
 
@@ -8,7 +9,7 @@ Netflix::~Netflix() {}
 
 void Netflix::agregarArchivo(std::string archivoVideo) {
   // Variables de archivo
-  std::fstream archivo;
+  std::ifstream archivo;
   char tipoVideo;
 
   // Variables rescatadas
@@ -29,24 +30,38 @@ void Netflix::agregarArchivo(std::string archivoVideo) {
       if (tipoVideo == 'p') {
         archivo >> nombre >> genero >> duracion >> id >> calificacion >>
             fechaEstreno >> director;
-        Pelicula vidTemp(fechaEstreno, director, nombre, genero, duracion, id,
-                         calificacion);
-        catalogo.push_back(&vidTemp);
-      } else {
+        catalogo.push_back(new Pelicula(fechaEstreno, director, nombre, genero,
+                                        duracion, id, calificacion));
+      } else if (tipoVideo == 'e') {
         archivo >> nombre >> genero >> duracion >> id >> calificacion >>
             temporada >> capitulo >> serie;
-        Episodio vidTemp(serie, temporada, capitulo, nombre, genero, duracion,
-                         id, calificacion);
-        catalogo.push_back(&vidTemp);
+        catalogo.push_back(new Episodio(serie, temporada, capitulo, nombre,
+                                        genero, duracion, id, calificacion));
       }
     }
   }
 }
 
-void Netflix::buscarCal(int calInput) {
-  for (auto &vid : catalogo) {
-    if (vid->getCalificacion() == calInput) {
-      vid->imprime();
+void Netflix::buscarCalPel(int calInput) {
+  for (int i = 0; i < catalogo.size(); i++) {
+    if (Pelicula *ptrPel = dynamic_cast<Pelicula *>(catalogo[i])) {
+      if (calInput == ptrPel->getCalificacion()) {
+        ptrPel->imprime();
+        std::cout << std::endl;
+      }
+    }
+  }
+}
+
+void Netflix::buscarSerie(std::string nomInput, int calInput) {
+  for (int i = 0; i < catalogo.size(); i++) {
+    if (Episodio *ptrEp = dynamic_cast<Episodio *>(catalogo[i])) {
+      if (nomInput == ptrEp->getSerie()) {
+        if (calInput == ptrEp->getCalificacion()) {
+          ptrEp->imprime();
+          std::cout << std::endl;
+        }
+      }
     }
   }
 }
@@ -60,9 +75,33 @@ void Netflix::buscarNom(std::string nomInput) {
 }
 
 void Netflix::buscarGen(std::string genInput) {
-  for (auto &vid : catalogo) {
-    if (vid->getGenero() == genInput) {
-      vid->imprime();
+  for (int i = 0; i < catalogo.size(); i++) {
+    if (catalogo[i]->getGenero() == genInput) {
+      catalogo[i]->imprime();
+      std::cout << std::endl;
     }
   }
+}
+
+void Netflix::calificar(std::string nombre, int calificacion) {
+  for (int i = 0; i < catalogo.size(); i++) {
+    if (catalogo[i]->getNombre() == nombre) {
+      catalogo[i]->setCalificacion(calificacion);
+    }
+  }
+}
+
+void Netflix::mostrar() {
+  for (auto vid : catalogo) {
+    vid->imprime();
+    std::cout << std::endl;
+  }
+}
+
+std::ostream &operator<<(std::ostream &salida, const Netflix &netflix_) {
+  for (int i = 0; i < netflix_.catalogo.size(); i++) {
+    netflix_.catalogo[i]->imprime();
+    std::cout << std::endl;
+  }
+  return salida;
 }

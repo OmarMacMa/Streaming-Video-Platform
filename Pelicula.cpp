@@ -19,5 +19,5 @@ void Pelicula::setDirector(std::string director_) { director = director_; }
 void Pelicula::imprime() {
   Video::imprime();
   std::cout << "Estreno: " << fechaEstreno
-            << " de la mano del director: " << director << std::endl;
+            << "\nDel Director: " << director << std::endl;
 }

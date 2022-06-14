@@ -8,6 +8,7 @@ Episodio::Episodio(std::string serie_, int temporada_, int capitulo_,
                    std::string nombre_, std::string genero_, int duracion_,
                    int id_, int calificacion_)
     : Video(nombre_, genero_, duracion_, id_, calificacion_) {
+  setSerie(serie_);
   setTemporada(temporada_);
   setCapitulo(capitulo_);
 }
@@ -21,6 +22,7 @@ void Episodio::setCapitulo(int capitulo_) { capitulo = capitulo_; }
 void Episodio::setSerie(std::string serie_) { serie = serie_; }
 void Episodio::imprime() {
   Video::imprime();
+  std::cout << "Serie: " << serie << std::endl;
   std::cout << "Capitulo :" << capitulo << " Temporada: " << temporada
             << std::endl;
 }
