@@ -5,7 +5,7 @@ int main() {
   int opcion;
   Netflix netflix;
   netflix.agregarArchivo("videos.txt");
-  std::cout << "Videos cargados de videos.txt" << std::endl << std::endl;
+  std::cout << "Videos cargados del archivo videos.txt" << std::endl << std::endl;
 
   std::cout << "Bienvenido al Catalogo" << std::endl;
   std::cout << "1. Buscar videos por genero" << std::endl;
