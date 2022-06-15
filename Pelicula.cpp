@@ -18,6 +18,6 @@ void Pelicula::setFechaEstreno(std::string fecha_) { fechaEstreno = fecha_; }
 void Pelicula::setDirector(std::string director_) { director = director_; }
 void Pelicula::imprime() {
   Video::imprime();
-  std::cout << "Estreno: " << fechaEstreno
-            << "\nDel Director: " << director << std::endl;
+  std::cout << "Estreno: " << fechaEstreno << "\nDel Director: " << director
+            << std::endl;
 }

@@ -6,7 +6,8 @@ Video::Video() {
   duracion = 90;
   id = 15146;
 }
-Video::Video(std::string nombre_, std::string genero_, int duracion_, int id_, int calificacion_) {
+Video::Video(std::string nombre_, std::string genero_, int duracion_, int id_,
+             int calificacion_) {
   setNombre(nombre_);
   setGenero(genero_);
   setDuracion(duracion_);
