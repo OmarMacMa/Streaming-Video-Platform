@@ -5,7 +5,6 @@
 
 class Episodio : public Video {
 public:
-  Episodio();
   Episodio(std::string, int, int, std::string, std::string, int, int, int);
   ~Episodio();
   int getTemporada() const;

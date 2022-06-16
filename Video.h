@@ -5,7 +5,6 @@
 
 class Video {
 public:
-  Video();
   Video(std::string, std::string, int, int, int);
   ~Video();
   std::string getNombre() const;
@@ -18,7 +17,7 @@ public:
   void setDuracion(int);
   void setId(int);
   void setCalificacion(int);
-  virtual void imprime();
+  virtual void imprime() = 0;
 
 protected:
   std::string nombre;

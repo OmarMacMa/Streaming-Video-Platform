@@ -1,9 +1,5 @@
 #include "Pelicula.h"
 
-Pelicula::Pelicula() : Video() {
-  fechaEstreno = "1 de enero 2023";
-  director = "Guillermo del Toro";
-}
 Pelicula::Pelicula(std::string fecha_, std::string director_,
                    std::string nombre_, std::string genero_, int duracion_,
                    int id_, int calificacion_)
@@ -17,7 +13,10 @@ std::string Pelicula::getDirector() const { return director; }
 void Pelicula::setFechaEstreno(std::string fecha_) { fechaEstreno = fecha_; }
 void Pelicula::setDirector(std::string director_) { director = director_; }
 void Pelicula::imprime() {
-  Video::imprime();
+  std::cout << "Titulo: " << nombre << std::endl;
+  std::cout << "Duracion: " << duracion << std::endl;
+  std::cout << "Genero: " << genero << std::endl;
+  std::cout << "Calificacion: " << calificacion << std::endl;
   std::cout << "Estreno: " << fechaEstreno << "\nDel Director: " << director
             << std::endl;
 }

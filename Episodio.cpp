@@ -1,9 +1,5 @@
 #include "Episodio.h"
 
-Episodio::Episodio() : Video() {
-  temporada = 1;
-  capitulo = 12;
-}
 Episodio::Episodio(std::string serie_, int temporada_, int capitulo_,
                    std::string nombre_, std::string genero_, int duracion_,
                    int id_, int calificacion_)
@@ -21,8 +17,11 @@ void Episodio::setTemporada(int temporada_) { temporada = temporada_; }
 void Episodio::setCapitulo(int capitulo_) { capitulo = capitulo_; }
 void Episodio::setSerie(std::string serie_) { serie = serie_; }
 void Episodio::imprime() {
-  Video::imprime();
+  std::cout << "Titulo: " << nombre << std::endl;
+  std::cout << "Duracion: " << duracion << std::endl;
+  std::cout << "Genero: " << genero << std::endl;
+  std::cout << "Calificacion: " << calificacion << std::endl;
   std::cout << "Serie: " << serie << std::endl;
-  std::cout << "Capitulo :" << capitulo << " Temporada: " << temporada
+  std::cout << "Capitulo: " << capitulo << " Temporada: " << temporada
             << std::endl;
 }

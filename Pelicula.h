@@ -5,7 +5,6 @@
 
 class Pelicula : public Video {
 public:
-  Pelicula();
   Pelicula(std::string, std::string, std::string, std::string, int, int, int);
   ~Pelicula();
   std::string getFechaEstreno() const;
