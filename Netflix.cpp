@@ -155,14 +155,6 @@ void Netflix::calificar(std::string nombre, int calificacion) {
   }
 }
 
-
-void Netflix::mostrar() {
-  for (auto vid : catalogo) {
-    vid->imprime();
-    std::cout << std::endl;
-  }
-}
-
 std::ostream &operator<<(std::ostream &salida, const Netflix &netflix_) {
   for (int i = 0; i < netflix_.catalogo.size(); i++) {
     netflix_.catalogo[i]->imprime();
