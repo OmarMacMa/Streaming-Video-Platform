@@ -70,17 +70,17 @@ void Netflix::buscarSerie(std::string nomInput, int calInput) {
     for (int i = 0; i < catalogo.size(); i++) {
       if (Episodio *ptrEp = dynamic_cast<Episodio *>(catalogo[i])) {
         if (nomInput == ptrEp->getSerie()) {
+          nomCounter ++;
           if (calInput == ptrEp->getCalificacion()) {
             ptrEp->imprime();
             std::cout << std::endl;
-            nomCounter ++;
           }
         }
       }
     }
     try{
       if (nomCounter == 0){
-        throw "Esa pelicula no esta en el catalogo, lo sentimos";
+        throw "Esa serie no esta en el catalogo, lo sentimos";
       }
     }
     catch(const char *msgNom){

@@ -3,7 +3,7 @@
 
 int main() {
   int opcion;
-  bool repeat;
+  bool repeat = true;
   Netflix netflix;
   netflix.agregarArchivo("videos.txt");
   std::cout << "Videos cargados del archivo videos.txt" << std::endl
@@ -55,7 +55,7 @@ int main() {
     case 5: {
       std::string nombre;
       int cal;
-      std::cout << "Ingrese la serie a calificar: ";
+      std::cout << "Ingrese la pelicula o episodio a calificar: ";
       std::cin >> nombre;
       std::cout << "Ingrese la calificacion: ";
       std::cin >> cal;
@@ -72,7 +72,7 @@ int main() {
       break;
     }
     default: {
-      std::cout << "Tu opcion no esta en el menu";
+      std::cout << "Tu opcion no esta en el menu" << std::endl;
     }
     }
   } while (repeat);
